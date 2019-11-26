@@ -29,25 +29,30 @@ export default function SignIn() {
 
                     {/* FORMULARIO DE INPUTS */}
                     <form onSubmit={handleAdd} className="siimple-field">
-                        <p className="siimple-field-label">Your email</p>
-                        <input
-                            className="siimple-input siimple-input--fluid"
-                            type="email"
-                            placeholder="you@email.com"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <p className="siimple-field-label">Your password</p>
-                        <input
-                            className="siimple-input siimple-input--fluid"
-                            type="password"
-                            placeholder="password"
-                            value={pass}
-                            onChange={e => setPass(e.target.value)}
-                        />
-                        <span className="siimple-field-helper">
-                            You password must contain at least 8 characters
-                        </span>
+                        <div className="siimple-field">
+                            <p className="siimple-field-label">Your email</p>
+                            <input
+                                className="siimple-input siimple-input--fluid"
+                                type="email"
+                                placeholder="you@email.com"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </div>
+                        <div className="siimple-field">
+                            <p className="siimple-field-label">Your password</p>
+
+                            <input
+                                className="siimple-input siimple-input--fluid"
+                                type="password"
+                                placeholder="password"
+                                value={pass}
+                                onChange={e => setPass(e.target.value)}
+                            />
+                            <span className="siimple-field-helper">
+                                You password must contain at least 8 characters
+                            </span>
+                        </div>
                         <button
                             type="submit"
                             className="siimple-btn siimple-btn--primary siimple-btn--fluid siimple--text-bold"

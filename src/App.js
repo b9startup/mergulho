@@ -1,17 +1,22 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 
 import './config/reactotronConfig';
 import Routes from './routes';
 import history from './services/history';
 
+import store from './store';
+
 import 'siimple';
 
 function App() {
     return (
-        <Router history={history}>
-            <Routes />
-        </Router>
+        <Provider store={store}>
+            <Router history={history}>
+                <Routes />
+            </Router>
+        </Provider>
     );
 }
 
