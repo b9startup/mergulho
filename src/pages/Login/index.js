@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { signInRequest } from '~/store/modules/auth/actions';
+
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  function handleSubmit() {
+    dispatch(signInRequest(email, password));
+  }
+
   return (
     <div className="siimple-content siimple-content--extra-small">
       <div className="siimple--px-5 siimple--py-5">
@@ -26,6 +38,7 @@ export default function Login() {
               placeholder="seu@email.com"
               name="email"
               className="siimple-input siimple-input--fluid"
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
 
@@ -36,13 +49,17 @@ export default function Login() {
               placeholder="Sua senha"
               name="password"
               className="siimple-input siimple-input--fluid"
+              onChange={e => setPassword(e.target.value)}
             />
             <div className="siimple-field-helper">
               Sua senha deve conter pelo menos 8 caracteres.
             </div>
           </div>
 
-          <div className="siimple-btn siimple-btn--primary siimple-btn--fluid">
+          <div
+            className="siimple-btn siimple-btn--primary siimple-btn--fluid"
+            onClick={handleSubmit}
+          >
             Entrar
           </div>
         </div>
