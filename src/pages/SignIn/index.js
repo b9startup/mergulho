@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { signInRequest } from '~/store/modules/auth/actions';
 
 export default function SignIn() {
     const [pass, setPass] = useState([]);
     const [email, setEmail] = useState([]);
 
+    const dispatch = useDispatch();
+
     function handleAdd(e) {
         e.preventDefault();
-        console.tron.log(email, pass);
+        dispatch(signInRequest(email, pass));
     }
 
     return (
