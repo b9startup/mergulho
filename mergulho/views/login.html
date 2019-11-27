@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/siimple.min.css">
+    <link rel="stylesheet" href="/assets/css/style_custom.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<title>B9 Startup - Login</title>
+</head>
+<body>
+<main>
+<div class="overlay"></div>
+<div class="siimple-content siimple-content--extra-small">
+    <div class="siimple--px-5 siimple--py-5">
+        <div class="siimple-h2 siimple--text-normal siimple--mb-1" align="center">
+            B9 Startup - Acesso
+        </div>
+        <form action="" id="sign_up" method="get">
+                <div class="siimple-paragraph siimple-paragraph--lead" align="center">
+                    <p>Informe seu <strong>e-mail</strong> e <strong>senha</strong> para acessar.</p>
+                </div>
+                <div class="siimple-field">
+                    <div class="siimple-field-label">E-mail</div>
+                    <input type="email" name="email" class="siimple-input siimple-input--fluid" placeholder="seuemail@email.com">
+                </div>
+                <div class="siimple-field">
+                    <div class="siimple-field-label">Senha</div>
+                    <input type="password" name="senha" class="siimple-input siimple-input--fluid" placeholder="senha">
+                </div>
+                <div class="siimple-field">
+                    <div class="siimple-btn siimple-btn--primary siimple-btn--fluid siimple--text-bold">
+                        <input type="submit" value="ENTRAR">
+                    </div>
+                </div>
+        </form>
+        <div class="siimple-card siimple--mt-5" align="center">
+            <div class="siimple-card-body siimple--color-white">
+                Ainda não é cadastrado ? <a class="siimple-link">Criar Cadastro</a>.
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#sign_up").validate({
+                      rules: {
+                          email: {
+                              required: true,
+                              email: true
+                          },
+                          senha: {
+                              required: true,
+                              maxlength: 8
+
+                          }
+                      },
+              messages:{
+                  email:{
+                      required: "O campo e-mail é obrigatório.",
+                      email: "Favor, informe um e-mail válido."
+                  },
+                  senha: {
+                      required: "O campo senha é obrigatório.",
+                      maxlength: "Sua senha deve conter pelo menos 8 caracteres."
+                  }
+                  }
+              });
+        });
+    </script>
+</main>
+</body>
+
+
