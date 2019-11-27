@@ -24,7 +24,9 @@ class SessionController {
         email: user.email,
       };
 
-      const token = await jwt.sign(payload, '123456', { expiresIn: '1d' });
+      const token = await jwt.sign(payload, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRATION,
+      });
 
       return res.status(200).json({ token });
     } catch (error) {
