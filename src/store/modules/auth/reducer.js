@@ -11,6 +11,17 @@ export default function auth(state = INITIAL_STATE, action) {
 
   return produce(state, draft => {
     switch (type) {
+      case '@auth/SIGN_IN_REQUEST': {
+        draft.loading = true;
+        break;
+      }
+
+      case '@auth/SIGN_IN_SUCCESS': {
+        draft.loading = false;
+        draft.token = payload.token;
+        draft.signed = true;
+        break;
+      }
       default:
     }
   });

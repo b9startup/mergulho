@@ -1,9 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function RouteWrapper({ component, isProtected, ...rest }) {
-  const signed = false;
+  const signed = useSelector(state => state.auth.signed);
 
   if (!signed && isProtected) return <Redirect to="/login" />;
 
