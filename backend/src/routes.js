@@ -1,8 +1,10 @@
 import express from 'express';
-import AuthController from './app/controller/AuthController';
+import SignUpController from './app/controller/SignUpController';
+import SignInController from './app/controller/SignInController';
 
 const routes = express.Router();
 
-routes.post('/auth', AuthController.store);
+routes.post('/signup', SignUpController.store);
+routes.post('/signin', SignInController.store);
 
 export default routes;
