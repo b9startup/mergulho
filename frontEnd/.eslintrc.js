@@ -34,7 +34,8 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'no-console': ['error', { allow: ['tron'] }],
         'react/jsx-props-no-spreading': 'off',
-        'react/no-unescaped-entities': 'off'
+        'react/no-unescaped-entities': 'off',
+        'no-param-reassign': 'off'
     },
     settings: {
         'import/resolver': {

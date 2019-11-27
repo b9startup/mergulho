@@ -13,6 +13,8 @@ export default function SignIn() {
     function handleAdd(e) {
         e.preventDefault();
         dispatch(signInRequest(email, pass));
+        setEmail('');
+        setPass('');
     }
 
     return (
