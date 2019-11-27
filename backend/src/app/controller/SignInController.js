@@ -1,6 +1,8 @@
 import * as Yup from 'yup';
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import db from '../database';
+import 'dotenv/config';
 
 class SignInController {
     async store(req, res) {
@@ -31,7 +33,18 @@ class SignInController {
                 return res.status(401).json({ error: 'invalid password' });
             }
 
-            return res.json({ error: 'LOGIN' });
+            const { id, name } = userExists;
+            const payload = {
+                id,
+                name,
+                email,
+            };
+
+            const token = await jwt.sign(payload, process.env.AUTH_SECRET, {
+                expiresIn: process.env.AUTH_EXPIRE_IN,
+            });
+
+            return res.json({ id, token, name, email });
         } catch (err) {
             return res.status(500).json({ error: 'Connection Failured' });
         }
