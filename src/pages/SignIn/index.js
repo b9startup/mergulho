@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import { signInRequest } from '~/store/modules/auth/actions';
 
 export default function SignIn() {
-    const [pass, setPass] = useState([]);
-    const [email, setEmail] = useState([]);
+    const [pass, setPass] = useState('');
+    const [email, setEmail] = useState('');
 
     const dispatch = useDispatch();
 
