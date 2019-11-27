@@ -1,4 +1,5 @@
 import { all, takeLatest, call, put } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
 import api from '~/services/api';
 import history from '~/services/history';
@@ -15,8 +16,10 @@ export function* signIn({ payload }) {
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
+    toast.info('Você foi logado com sucesso!');
     yield put(signInSuccess(token));
   } catch (error) {
+    toast.error(error.response.data.error);
     yield put(signFailure());
   }
 }
