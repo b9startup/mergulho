@@ -11,6 +11,11 @@ export default function auth(state = INITIAL_STATE, action) {
 
   return produce(state, draft => {
     switch (type) {
+      case '@auth/SIGN_OUT': {
+        draft.token = null;
+        draft.signed = false;
+        break;
+      }
       default:
     }
   });

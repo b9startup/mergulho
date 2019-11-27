@@ -1,7 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { signOut } from '~/store/modules/auth/actions';
+
 export default function Navbar() {
+  const dispatch = useDispatch();
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
+
   return (
     <header className="siimple-navbar siimple--width-100 siimple--mwidth-100 siimple--pl-0">
       <Link className="siimple-navbar-title" to="/">
@@ -22,7 +31,11 @@ export default function Navbar() {
           Contato
         </Link>
 
-        <button className="siimple-btn siimple-btn--error" type="button">
+        <button
+          onClick={handleSignOut}
+          className="siimple-btn siimple-btn--error"
+          type="button"
+        >
           Sair
         </button>
       </nav>

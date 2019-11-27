@@ -4,3 +4,9 @@ export function signInRequest(email, password) {
     payload: { email, password },
   };
 }
+
+export function signOut() {
+  return {
+    type: '@auth/SIGN_OUT',
+  };
+}
