@@ -31,13 +31,13 @@ export default function SignIn() {
                         className="siimple-paragraph siimple-paragraph--lead"
                         align="center"
                     >
-                        Use your email and password to sign in into our site
+                        Use seu e-mail e senha para acessar nosso site
                     </p>
 
                     {/* FORMULARIO DE INPUTS */}
                     <form onSubmit={handleAdd} className="siimple-field">
                         <div className="siimple-field">
-                            <p className="siimple-field-label">Your email</p>
+                            <p className="siimple-field-label">E-mail</p>
                             <input
                                 className="siimple-input siimple-input--fluid"
                                 type="email"
@@ -47,7 +47,7 @@ export default function SignIn() {
                             />
                         </div>
                         <div className="siimple-field">
-                            <p className="siimple-field-label">Your password</p>
+                            <p className="siimple-field-label">Senha</p>
 
                             <input
                                 className="siimple-input siimple-input--fluid"
@@ -57,7 +57,7 @@ export default function SignIn() {
                                 onChange={e => setPass(e.target.value)}
                             />
                             <span className="siimple-field-helper">
-                                You password must contain at least 8 characters
+                                A senha deve ter no mínimo 8 caracteres
                             </span>
                         </div>
                         <button
@@ -71,9 +71,9 @@ export default function SignIn() {
                     {/* RODAPÈ */}
                     <div className="siimple-card siimple--mt-5" align="center">
                         <div className="siimple-card-body">
-                            Don't have an account?{' '}
-                            <Link to="/" className="siimple-link">
-                                Create an account
+                            Ainda não tem conta?{' '}
+                            <Link to="/signup" className="siimple-link">
+                                Criar conta
                             </Link>
                         </div>
                     </div>
