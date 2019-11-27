@@ -24,3 +24,9 @@ export function signUpSucess() {
         type: '@auth/SIGN_UP_SUCESS',
     };
 }
+
+export function signOut() {
+    return {
+        type: '@auth/SIGN_OUT',
+    };
+}

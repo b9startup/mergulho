@@ -16,7 +16,7 @@ export default function Panel() {
                 </div>
                 <div className="siimple--mt-3">
                     <Link
-                        href="/home"
+                        to="/home"
                         className="siimple-btn siimple--bg-white siimple--color-dark"
                     >
                         Read <strong>more</strong>...

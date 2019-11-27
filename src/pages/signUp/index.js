@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { signUpRequest } from '~/store/modules/signup/actions';
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 export default function SignUp() {
     const [pass, setPass] = useState('');
@@ -72,7 +72,7 @@ export default function SignUp() {
                             type="submit"
                             className="siimple-btn siimple-btn--primary siimple-btn--fluid siimple--text-bold"
                         >
-                            Login
+                            Criar Conta
                         </button>
                     </form>
 

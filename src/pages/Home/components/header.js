@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { signOut } from '~/store/modules/auth/actions';
 
 export default function Header() {
+    const dispatch = useDispatch();
+    function SignOut() {
+        dispatch(signOut());
+    }
     return (
         <>
             <div className="siimple--clearfix">
@@ -24,13 +31,14 @@ export default function Header() {
                     >
                         Contact
                     </Link>
-                    <Link
-                        to="/home"
+                    <button
+                        type="button"
+                        onClick={SignOut}
                         className="siimple-btn siimple-btn--light"
                         style={{ marginLeft: '10px' }}
                     >
                         Sair
-                    </Link>
+                    </button>
                 </div>
             </div>
         </>
