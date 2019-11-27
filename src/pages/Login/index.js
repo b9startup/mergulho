@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { signInRequest } from '~/store/modules/auth/actions';
@@ -9,6 +9,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
     dispatch(signInRequest(email, password));
@@ -60,7 +61,11 @@ export default function Login() {
             className="siimple-btn siimple-btn--primary siimple-btn--fluid"
             onClick={handleSubmit}
           >
-            Entrar
+            {loading ? (
+              <div className="siimple-spinner siimple-spinner--light siimple--my-1" />
+            ) : (
+              'Entrar'
+            )}
           </div>
         </div>
 
