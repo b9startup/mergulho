@@ -1,5 +1,5 @@
 
-body{
+.login_background{
     position: relative;
     width: 100%;
     height: auto;
@@ -12,5 +12,28 @@ body{
     border:none;
     color:white;
     font-weight: bold;
+}
+
+.border-top{
+    border-top: solid 2px #bdc3c7;
+}
+.siimple--mt-6{
+    margin-top: 10vh;
+}
+.siimple--mt-7{
+    margin-top: 20vh;
+}
+nav{
+    background-color: #6F1E51;
+    color:#ffffff;
+}
+.siimple-jumbotron--background{
+    background-image: url("../images/background-header.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+.siimple-jumbotron{
+    position: relative;
 }
 
