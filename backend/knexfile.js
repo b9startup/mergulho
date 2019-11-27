@@ -13,7 +13,7 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: path.join(__dirname, 'database', 'migrations'),
+      directory: path.join(__dirname, 'src', 'database', 'migrations'),
       tableName: 'b9startup',
     },
   },
@@ -30,7 +30,7 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: path.join(__dirname, 'database', 'migrations'),
+      directory: path.join(__dirname, 'src', 'database', 'migrations'),
       tableName: 'b9startup',
     },
   },
@@ -47,7 +47,7 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: path.join(__dirname, 'database', 'migrations'),
+      directory: path.join(__dirname, 'src', 'database', 'migrations'),
       tableName: 'b9startup',
     },
   },
