@@ -17,10 +17,18 @@
 ```
 
 
-<span>No projeto foi usado o banco de dados Postgresql, então crie uma instancia local do banco de dados</span>
+<h3>No projeto foi usado o banco de dados Postgresql, então crie uma instancia local do banco de dados</h3>
+
+
 
 <h3>Apos instalado as dependencias configure as variaveis locais</h3>
 <span>Crie na raiz um arquivo chamado ".env" seguindo o exemplo do que esta criado lá  ".envExemple" e preencha com os dados de conexão do banco de dados, e com a chave md5 para gerar o token de segurança para login</span>
+
+<span>Apos configurar, e subir uma instancia do banco, devemos rodar a migration para criar a tabela</span>
+
+```js
+    yarn knex migrate:up
+```
 
 
 <h3>Apos tudo configurado podemos rodar o servidor, com os seguintes comandos</h3>
