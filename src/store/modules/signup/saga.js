@@ -10,6 +10,11 @@ export function* signUp({ payload }) {
     try {
         const { name, email, pass } = payload;
 
+        if (pass.length < 8) {
+            toast.error('Senha precisa ter mais de 8 caracteres');
+            return;
+        }
+
         yield call(api.post, '/signup', { name, email, pass });
 
         yield put(signUpSucess());
