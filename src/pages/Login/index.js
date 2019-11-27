@@ -72,7 +72,7 @@ export default function Login() {
         <div className="siimple-card" align="center">
           <div className="siimple-card-body">
             Ainda não possui conta?{' '}
-            <Link to="/login" className="siimple-link">
+            <Link to="/cadastro" className="siimple-link">
               Crie agora!
             </Link>
           </div>
