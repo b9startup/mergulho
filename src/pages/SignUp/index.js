@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { signInRequest } from '~/store/modules/auth/actions';
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 export default function Login() {
   const [name, setName] = useState('');
@@ -13,7 +13,7 @@ export default function Login() {
   const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
-    dispatch(signInRequest(email, password));
+    dispatch(signUpRequest(name, email, password));
   }
 
   return (
